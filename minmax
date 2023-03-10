@@ -1,0 +1,108 @@
+#include <iostream>
+#include <cmath>
+#include <math.h>
+using namespace std;
+
+void MinMax(double &a, double &b, double &c, double *&pMax, double *&pMin){
+  double temp1;
+  double temp2;
+  double temp3;
+
+  if(a<b && a<c){
+    pMin=&a;
+    if(b<c){
+      pMax=&c;
+      *pMax=c;
+    }
+    else{
+      pMax=&b;
+      *pMax=b;
+    }
+  }
+  if(b<a && b<c){
+    pMin=&b;
+    *pMin=b;
+    if(a<c){
+      pMax=&c;
+      *pMax=c;
+    }
+    else{
+      pMax=&b;
+      *pMax=b;
+    }
+  }
+  if(c<a && c<b){
+    pMin=&c;
+    *pMin=c;
+    if(a<b){
+      pMax=&b; 
+      *pMax=b;
+    }
+    else{
+        pMax=&c;
+      *pMax=c;
+      }
+  }
+}
+
+void MinMax(double *a, double *b, double *c, double **pMax, double **pMin){
+  double temp1;
+  double temp2;
+  double temp3;
+
+ 
+  if(a<b && a<c){
+    pMin=&a;
+    if(b<c){
+      pMax=&c;
+      *pMax=c;
+    }
+    else{
+      pMax=&b;
+      *pMax=b;
+    }
+  }
+  if(b<a && b<c){
+    pMin=&b;
+    *pMin=b;
+    if(a<c){
+      pMax=&c;
+      *pMax=c;
+    }
+    else{
+      pMax=&b;
+      *pMax=b;
+    }
+  }
+  if(c<a && c<b){
+    pMin=&c;
+    *pMin=c;
+    if(a<b){
+      pMax=&b; 
+      *pMax=b;
+    }
+    else{
+        pMax=&c;
+      *pMax=c;
+      }
+  }
+}
+
+
+int main(){
+  
+  double **pMin;
+  double **pMax;
+
+  double a,b,c;
+  cout<<"Wpisz 3 liczby."<<endl;
+  cin>>a>>b>>c;
+
+  MinMax(&a,&b,&c, *&pMax, *&pMin);
+
+  cout<<"Max = "<<**pMax<<" Min = "<<**pMin<<endl;
+  
+  
+
+  
+}
